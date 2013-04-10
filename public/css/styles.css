@@ -1,0 +1,176 @@
+td { background: #F3F3F3; height: 100px; width: 100px;}
+
+td:hover { background: #F0AB00; }
+
+#td_link_2 {height: 100%;}
+
+#td_link_2 a { color: black; display: block; line-height: 200px;}
+
+#td_link_1 {height: 100%;}
+
+#td_link_1 a { color: black; display: block; line-height: 100px;}
+
+.tiles {background: #F3F3F3; height: 100px; width: 100px;}
+
+.tooltip {
+    display:none;
+    background:transparent /* url(/media/img/tooltip/black_arrow.png) */ ; 
+    font-size:75%;
+    height:70px;
+    width:160px;
+    padding:25px;
+    color:#eee;
+  }
+
+.ui-menu { width: 150px; }
+
+#app_menu{
+background-color:#295E8D;
+height:100%;
+width:200px;
+float:left;
+background: transparent;
+}
+
+#menu{
+  float: left;
+  width: 20%;
+}
+
+/* #nav{
+    float: left;
+    width: 20%;
+}
+*/
+
+#nav ul {
+padding: 0%;
+margin: 1%;
+}
+
+#panel1 ul li {
+margin-left: 0px;
+margin-right: 0px;
+background: inheret;
+display: inline;
+border: #DCE3EA 1px;
+position:fixed;
+}
+
+#panel1 ul li:hover {
+background: #9DACBE;
+}
+
+#nav ul li {display: inline;}
+
+/* Draggable Objects */
+
+#div1, #div2 {float:left; width:200px; height:200px; margin:10px;padding:10px;border:1px solid #aaaaaa;}
+
+.draggable { width: 30px; height: 30px; padding: 0.5em; float: left; margin: 0 10px 10px 0; border-radius:25px;}
+#draggable, #draggable2 { margin-bottom:20px; border-radius:25px;}
+#draggable { cursor: n-resize; border-radius:25px; }
+#draggable2 { cursor: e-resize; border-radius:25px;}
+
+#containment-wrapper {
+background: #DDE4EB;
+margin-bottom: 5%;
+width: 95%;
+height:500px;
+width: 500px; border:2px solid #ccc; padding: 10px; float:left; margin-left: 20%;
+-webkit-box-shadow:0 15px 10px rgba(0, 0, 0, 0.7);
+-moz-box-shadow:0 15px 10px rgba(0, 0, 0, 0.7);
+box-shadow:0 15px 10px rgba(0, 0, 0, 0.7);
+}
+
+
+/* Contacts Styling for the lifted edges */
+
+.box p{
+text-align:center;
+position:relative;
+top:80px;
+}
+.box {
+width:70%;
+height:200px;
+background:#FFF;
+margin:40px auto;
+}
+/*==================================================
+* Effect 2
+* ===============================================*/
+.effect2
+{
+position: relative;
+}
+
+.effect2:before, .effect2:after
+{
+z-index: -1;
+position: absolute;
+content: "";
+bottom: 15px;
+left: 10px;
+width: 50%;
+top: 80%;
+max-width:300px;
+background: #777;
+-webkit-box-shadow: 0 15px 10px #777;
+-moz-box-shadow: 0 15px 10px #777;
+box-shadow: 0 15px 10px #777;
+-webkit-transform: rotate(-3deg);
+-moz-transform: rotate(-3deg);
+-o-transform: rotate(-3deg);
+-ms-transform: rotate(-3deg);
+transform: rotate(-3deg);
+}
+
+.effect2:after
+{
+-webkit-transform: rotate(3deg);
+-moz-transform: rotate(3deg);
+-o-transform: rotate(3deg);
+-ms-transform: rotate(3deg);
+transform: rotate(3deg);
+right: 10px;
+left: auto;
+}
+
+/*==================================================
+* Effect 6
+* ===============================================*/
+.effect6
+{
+position:relative;
+-webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+-moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+}
+
+.effect6:before, .effect6:after
+{
+content:"";
+position:absolute;
+z-index:-1;
+-webkit-box-shadow:0 0 20px rgba(0,0,0,0.8);
+-moz-box-shadow:0 0 20px rgba(0,0,0,0.8);
+box-shadow:0 0 20px rgba(0,0,0,0.8);
+top:50%;
+bottom:0;
+left:10px;
+right:10px;
+-moz-border-radius:100px / 10px;
+border-radius:100px / 10px;
+}
+
+.effect6:after
+{
+right:10px;
+left:auto;
+-webkit-transform:skew(8deg) rotate(3deg);
+-moz-transform:skew(8deg) rotate(3deg);
+-ms-transform:skew(8deg) rotate(3deg);
+-o-transform:skew(8deg) rotate(3deg);
+transform:skew(8deg) rotate(3deg);
+}

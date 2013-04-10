@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:app.rb">
+   </FileRef>
+   <FileRef
+      location = "group:public/css/styles.css">
+   </FileRef>
+   <FileRef
+      location = "group:public/css/wrapper.css">
+   </FileRef>
+   <FileRef
+      location = "group:classes.rb">
+   </FileRef>
+   <FileRef
+      location = "group:views/index.haml">
+   </FileRef>
+   <FileRef
+      location = "group:views/results.haml">
+   </FileRef>
+   <FileRef
+      location = "group:views/tiles.haml">
+   </FileRef>
+   <FileRef
+      location = "group:views/layout.haml">
+   </FileRef>
+   <FileRef
+      location = "group:views/contact.haml">
+   </FileRef>
+   <FileRef
+      location = "group:public/js/script.js">
+   </FileRef>
+</Workspace>

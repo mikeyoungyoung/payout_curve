@@ -11,13 +11,12 @@
 %p
   Payout =
   %pay= @pay
-%button#btn3 Set Value
 
 %p
   Payout Percentage:
   %input#test3{:name => "pay_out", :type => "text", :value => @pay}/
 
-%table{:border => "0"}
+%table{:border => "0", :class => "curve_tab"}
   %tr
     %th Achievement
     %th Payout

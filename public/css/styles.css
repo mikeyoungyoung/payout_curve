@@ -2,6 +2,14 @@ td { background: #F3F3F3; height: 100px; width: 100px;}
 
 td:hover { background: #F0AB00; }
 
+.curve_tab {background: #F0F0F0;}
+
+.curve_tab tr {background: #F0AB00;
+                height: 1em;}
+
+.curve_tab td {background: #FFFFFF;
+                height: 1em;}
+
 #td_link_2 {height: 100%;}
 
 #td_link_2 a { color: black; display: block; line-height: 200px;}

@@ -3,7 +3,7 @@ require 'bundler/setup'
 require 'sinatra'
 require 'haml'
 #require 'data_mapper'
-require 'shotgun'
+#require 'shotgun'
 #require 'dm-sqlite-adapter'
 require_relative 'classes'
 
@@ -27,37 +27,36 @@ profit.create_curve("curve_profit.txt")
 get '/' do
     @title = profit.name
     @curve_name = profit.filename
+    @curve = profit.int_data
+    @test_hash = {1=>1, 2=>2, 3=>3}
+    #@curve.each {|key,value| puts "#{key}: #{value}"}
     @c_name_test = params[:curves]
-    @pay = profit.payout(2,3,25.0)
     @point = params[:message]
-    #    puts "In get for /"
-    #params.sort{|a,b| a[1]<=>b[1]}.each { |elem|
-    #    puts "#{elem[1]}, #{elem[0]}"
-    #}
-    #puts params[:message]
-    #puts "done"
-    #puts @point
-    #puts @point.class
+    #map to the view
     haml :index
 end
 
 post '/' do
     @title = profit.name
-    #puts "In post for /"
-    #params.sort{|a,b| a[1]<=>b[1]}.each { |elem|
-    #    puts "#{elem[1]}, #{elem[0]}"
-    #}
-    #puts "#{params[:message]}"
-    #puts "done"
-    #puts @point.to_f
-    @pay = profit.payout(1,2,params[:message].to_f)
+    @curve_name = profit.filename
+    @curve = profit.int_data
+    @test_hash = {1=>1, 2=>2, 3=>3}
+    #@curve.each {|key,value| puts "#{key}: #{value}"}
+    @c_name_test = params[:curves]
+    #@pay = profit.payout(25.0)
+    @point = params[:message]
+    if params[:message].nil?
+        @pay = 0.0
+    else
+        @pay = profit.payout(params[:message].to_f)
+    end
     haml :index
     #params[:payout]
     #redirect '/results'
 end
 
 get '/results' do
-    params[:this] = profit.payout(1,2,10)
+    params[:this] = profit.payout(10)
     #    "This is the point: #{params[:message]}"
     #        "This is the point: #{params[:payout]}"
     haml :results

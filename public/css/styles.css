@@ -1,11 +1,12 @@
 td { background: #F3F3F3; height: 100px; width: 100px;}
 
-td:hover { background: #F0AB00; }
+td:hover { background: #14488C; }
 
 .curve_tab {background: #F0F0F0;}
 
-.curve_tab tr {background: #F0AB00;
-                height: 1em;}
+.curve_tab tr {background: #7EB6D9;
+                height: 1em;
+                color: black;}
 
 .curve_tab td {background: #FFFFFF;
                 height: 1em;}
@@ -19,78 +20,6 @@ td:hover { background: #F0AB00; }
 #td_link_1 a { color: black; display: block; line-height: 100px;}
 
 .tiles {background: #F3F3F3; height: 100px; width: 100px;}
-
-.tooltip {
-    display:none;
-    background:transparent /* url(/media/img/tooltip/black_arrow.png) */ ; 
-    font-size:75%;
-    height:70px;
-    width:160px;
-    padding:25px;
-    color:#eee;
-  }
-
-.ui-menu { width: 150px; }
-
-#app_menu{
-background-color:#295E8D;
-height:100%;
-width:200px;
-float:left;
-background: transparent;
-}
-
-#menu{
-  float: left;
-  width: 20%;
-}
-
-/* #nav{
-    float: left;
-    width: 20%;
-}
-*/
-
-#nav ul {
-padding: 0%;
-margin: 1%;
-}
-
-#panel1 ul li {
-margin-left: 0px;
-margin-right: 0px;
-background: inheret;
-display: inline;
-border: #DCE3EA 1px;
-position:fixed;
-}
-
-#panel1 ul li:hover {
-background: #9DACBE;
-}
-
-#nav ul li {display: inline;}
-
-/* Draggable Objects */
-
-#div1, #div2 {float:left; width:200px; height:200px; margin:10px;padding:10px;border:1px solid #aaaaaa;}
-
-.draggable { width: 30px; height: 30px; padding: 0.5em; float: left; margin: 0 10px 10px 0; border-radius:25px;}
-#draggable, #draggable2 { margin-bottom:20px; border-radius:25px;}
-#draggable { cursor: n-resize; border-radius:25px; }
-#draggable2 { cursor: e-resize; border-radius:25px;}
-
-#containment-wrapper {
-background: #DDE4EB;
-margin-bottom: 5%;
-width: 95%;
-height:500px;
-width: 500px; border:2px solid #ccc; padding: 10px; float:left; margin-left: 20%;
--webkit-box-shadow:0 15px 10px rgba(0, 0, 0, 0.7);
--moz-box-shadow:0 15px 10px rgba(0, 0, 0, 0.7);
-box-shadow:0 15px 10px rgba(0, 0, 0, 0.7);
-}
-
 
 /* Contacts Styling for the lifted edges */
 
@@ -182,3 +111,4 @@ left:auto;
 -o-transform:skew(8deg) rotate(3deg);
 transform:skew(8deg) rotate(3deg);
 }
+

@@ -1,43 +1,23 @@
 %p Which Curve?
 %select
-  %option{:name => "volvo", :value => "volvo"} Volvo
-  %option{:name => "saab", :value => "saab"} Saab
-  %option{:name => "Opel", :value => "opel"} Opel
-  %option{:name => "Audi", :value => "audi"} Audi
-
+  %option{:name => "profit", :value => "profit"} Profitability
+  %option{:name => "op_margin", :value => "op_margin"} Operating Margin
+  %option{:name => "revenue", :value => "revenue"} Revenue
+  %option{:name => "bookings", :value => "bookings"} Bookings
+%p
+  Achievement Percentage
 %form{:action => "/", :method => "post"}
   %input{:name => "message", :type => "text"}
     %input{:type => "submit"}
 %p
-  Payout =
-  %pay= @pay
-
-%p
   Payout Percentage:
   %input#test3{:name => "pay_out", :type => "text", :value => @pay}/
+  (%)
 
 %table{:border => "0", :class => "curve_tab"}
   %tr
     %th Achievement
     %th Payout
-  %tr{:name => "row 1"}
-    %td{:name => "ach_1"} 0
-    %td{:name => "pay_1"} 0
-  %tr
-    %td 10
-    %td 20
-  %tr
-    %td 20
-    %td 35
-  %tr
-    %td 30
-    %td 50
-  %tr
-    %td 60
-    %td 80
-  %tr
-    %td 100
-    %td 100
-  %tr
-    %td 400
-    %td 150
+  %div
+    - @curve.each do |x,v|
+      = "<tr><td> #{x} </td> <td>#{v}</td></tr>"

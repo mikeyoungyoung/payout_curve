@@ -1,36 +1,35 @@
 /* Page Style */
 
+#nav_bar { 
+width: 100%;
+height: 20px;
+background: black;
+margin:auto;
+position: absolute;
+}
+
 body{
-background: #FFFFFF;
+background: #e7edf3;
 /*font-family: proxima-nova, "Helvetica Neue", Arial, sans-serif;*/
 font-family: "HelveticaNeue-Light", "Helvetica Neue Light";
+color: white;
 }
 
 #wrapper{
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light";
-    width:99%;
+    width:100%;
+    height: 100%
     margin:auto;
-    margin-top: 1%;
-    background: #CCCCCC;
-/*    background: -webkit-radial-gradient(circle, #CCCCCC, #999999); */
-    border-radius: 5px;
--webkit-box-shadow:0 15px 10px rgba(0, 0, 0, 0.7);
--moz-box-shadow:0 15px 10px rgba(0, 0, 0, 0.7);
-box-shadow:0 15px 10px rgba(0, 0, 0, 0.7);
+    color: #537fa6;
+    margin-top: 0%;
+    background: #f4f7f9;
 }
 
 tr {background: white;}
 
 #header{
-    background-color:#226CA9;
+    background-color:#b7cadb;
     colour: white;
-    border-top-right-radius: 5px;
-    border-top-left-radius: 5px;
-/*box-shadow: 0px 0px 34px 0px #000;
--webkit-box-shadow: 0px 0px 34px 0px #000;
--moz-box-shadow: 0px 0px 34px 0px #000;
--ms-box-shadow: 0px 0px 34px 0px #000;
--o-box-shadow: 0px 0px 34px 0px #000; */
 }
 
 #header>h1{
@@ -39,16 +38,16 @@ tr {background: white;}
     margin-left: 2%;
 }
 
-#header ul {padding:0.5em; margin:0%}
+/*#header ul {padding:0.5em; margin:0%} */
 
-#header ul li{
+/*#header ul li{
 display:inline;
 margin:15px;
 padding: 0.5em;
-color: #96999b;
-}
+color: white;
+} */
 
-#header ul li:hover {background:#326ec7;}
+#header ul li:hover {background:#14488C;}
 
 h1{
     font-size:130%;
@@ -60,15 +59,15 @@ h1{
 h2{  
     font-size:100%;
     font-family:sans-serif;
-    color: white; 
+    color: #eeeff6;
 }
-
 
 h3 { clear: left; }
 
 /*
 #content{  
     margin-left:10%;
+    color: white;
 }
 */
 
@@ -83,13 +82,11 @@ h3 { clear: left; }
 
 #footer{  
     clear:both;  
-    background-color:#F0AB00;  
+    background-color:#c5d4e2;  
     font-size:75%;
     font-family:sans-serif; 
     color:white;  
     border-top:solid 1px #69a;
-    border-bottom-right-radius: 5px;
-    border-bottom-left-radius: 5px;
 }  
 ol{  
     padding-top:20px;  
@@ -97,24 +94,23 @@ ol{
     display:block;
 }  
 
-
-li{
+/*li{
     color:#222F41;
     text-align:center;
     padding:10px 10px 10px 10px;
     margin-right:2px;
     list-style: none;
-}
+}*/
 
-li:hover {
+/*li:hover {
 background: grey;
-}
+}*/
 
-a {
+/*a {
     text-decoration:none;
     color: white;
     text-align: center;
-}
+}*/
 
 /* Top panel Styles */
 

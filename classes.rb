@@ -1,5 +1,11 @@
 #!/usr/bin/ruby -w
 
+hash_to_table = Proc.new { |k,v| "<tr><td>#{k}</td><td>#{v}</td></tr>"}
+
+#test_hash ={1=>1, 2=>2, 3=>3}
+#rows = test_hash.collect.each(&hash_to_table)
+#puts rows
+
 class Curve
     attr_accessor :data, :name, :filename, :int_data, :int_curve
     def initialize(name)
@@ -22,45 +28,23 @@ class Curve
     end
     
     #This calulates the payout % between two points
-    def payout(a,b,c)
+    def payout(c)
         if c.is_a? Float #Fixnum
-            puts "from inside"
-            x_array = @int_curve.map{ |x,y| x.to_f}
-            #puts x_array
-            #initialize loop
-            low_p = 0.0
-            high_p = 0.0
-            puts "checking array"
-            puts "#{c} --> #{low_p}"
-            #while high_p <= c
-                x_array.each_with_index do |element,index|
-                    puts "Is #{c} <= #{element}"
-                    #check if the evaluation point is in a range
-                    if c < element
-                        #Question:  How to make this stop the first time this happens?
-                        puts "C is less than #{element}"
-                        b = index
-                        puts "#{b}"
-                    elsif c > element
-                        puts "C is in the range"
-                        a = index - 1
-                        puts "#{a}"
-                    end
-                
-                end
-            #end
-            puts "Evaluate using: #{a} - #{b}"
-            (@int_curve[b][1].to_f-@int_curve[a][1].to_f)/(@int_curve[b][0].to_f-@int_curve[a][0].to_f)*(c - @int_curve[a][0].to_f) + @int_curve[a][1].to_f
+            #What is number is 0?
+            
+            #what if number is greater than the last point?
+            
+            #get low array and low point
+            low_arr = @int_curve.select {|x,y| x.to_f < c }
+            low_p = low_arr.last
+            #get high array and high point
+            high_arr = @int_curve.select {|x,y| x.to_f >= c }
+            high_p = high_arr.first
+            #Evaluate equation of line in two point form
+            return (high_p[1].to_f-low_p[1].to_f)/(high_p[0].to_f-low_p[0].to_f)*(c - low_p[0].to_f) + low_p[1].to_f
         else
-            puts "This is not a number!"
-            puts c.class
+            return "This is not a number!"
         end
     end
     
 end
-
-profit = Curve.new("profit")
-puts profit.name
-profit.create_curve("curve_profit.txt")
-puts "Check the Method"
-puts profit.payout(2.0,3.0,25.0)

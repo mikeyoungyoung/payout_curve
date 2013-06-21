@@ -5,13 +5,25 @@
       location = "group:app.rb">
    </FileRef>
    <FileRef
+      location = "group:classes.rb">
+   </FileRef>
+   <FileRef
+      location = "group:Gemfile">
+   </FileRef>
+   <FileRef
+      location = "group:Procfile">
+   </FileRef>
+   <FileRef
       location = "group:public/css/styles.css">
    </FileRef>
    <FileRef
       location = "group:public/css/wrapper.css">
    </FileRef>
    <FileRef
-      location = "group:classes.rb">
+      location = "group:public/css/component.css">
+   </FileRef>
+   <FileRef
+      location = "group:public/css/default.css">
    </FileRef>
    <FileRef
       location = "group:views/index.haml">
@@ -26,9 +38,18 @@
       location = "group:views/layout.haml">
    </FileRef>
    <FileRef
+      location = "group:views/index_sample.html">
+   </FileRef>
+   <FileRef
       location = "group:views/contact.haml">
    </FileRef>
    <FileRef
       location = "group:public/js/script.js">
+   </FileRef>
+   <FileRef
+      location = "group:public/js/classie.js">
+   </FileRef>
+   <FileRef
+      location = "group:public/js/modernizr.custom.js">
    </FileRef>
 </Workspace>

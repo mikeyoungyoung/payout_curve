@@ -38,13 +38,13 @@
       location = "group:views/layout.haml">
    </FileRef>
    <FileRef
-      location = "group:views/index_sample.html">
-   </FileRef>
-   <FileRef
       location = "group:views/contact.haml">
    </FileRef>
    <FileRef
       location = "group:public/js/script.js">
+   </FileRef>
+   <FileRef
+      location = "group:public/js/chartkick.js">
    </FileRef>
    <FileRef
       location = "group:public/js/classie.js">

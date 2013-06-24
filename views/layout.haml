@@ -9,9 +9,52 @@
         %meta{:content => "sliding menu, pushing menu, navigation, responsive, menu, css, jquery", :name => "keywords"}/
         %meta{:content => "Codrops", :name => "author"}/
         %link{:href => "../favicon.ico", :rel => "shortcut icon"}
-          %link{:href => "css/default.css", :rel => "stylesheet", :type => "text/css"}/
-          %link{:href => "css/component.css", :rel => "stylesheet", :type => "text/css"}/
-          %script{:src => "js/modernizr.custom.js"}
+        %link{:href => "css/default.css", :rel => "stylesheet", :type => "text/css"}/
+        %link{:href => "css/component.css", :rel => "stylesheet", :type => "text/css"}/
+        %link{:href => "css/styles.css", :rel => "stylesheet", :type => "text/css"}/
+        %script{:src => "js/modernizr.custom.js"}
+        %script{:src => "//www.google.com/jsapi"}
+        %script{:src => "js/chartkick.js"}
+    / Load the AJAX API
+  %script{:src => "https://www.google.com/jsapi", :type => "text/javascript"}
+  :javascript
+    // Load the Visualization API and the piechart package.
+    google.load('visualization', '1.0', {'packages':['corechart']});
+    console.log('#{@title}')
+    // Set a callback to run when the Google Visualization API is loaded.
+    google.setOnLoadCallback(drawChart);
+
+    // Callback that creates and populates a data table,
+    // instantiates the pie chart, passes in the data and
+    // draws it.
+    function drawChart() {
+    
+      // Create JSON object from txt file
+      var json_table = #{@curve.to_json}
+      
+      var t_data_json = new google.visualization.DataTable(json_table);
+      t_data_json.addColumn('number','Achievement');
+      t_data_json.addColumn('number','Payout');      
+
+      var data = new google.visualization.arrayToDataTable([
+          ['Achievement', 'Payout'],
+          [0,  0],
+          [10,  20],
+          [20,  40],
+          [50,  50,],
+          [60, 80],
+          [100,100],
+          [110,120],
+          [200,120]
+        ]);
+
+      // Set chart options
+      var options = {'title':'Payout Curve', colors: ['#0d77b6'], height: 400, width: 600, titleTextStyle: {color:'#0d77b6'}};
+
+      // Instantiate and draw our chart, passing in some options.
+      var chart = new google.visualization.AreaChart(document.getElementById('chart_div'));
+      chart.draw(data, options);
+    }
   %body.cbp-spmenu-push
     %nav#cbp-spmenu-s1.cbp-spmenu.cbp-spmenu-vertical.cbp-spmenu-left
       %h3 Menu

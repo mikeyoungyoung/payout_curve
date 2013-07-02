@@ -1,17 +1,16 @@
-%p Which Curve?
-%select
-  %option{:name => "profit", :value => "profit"} Profitability
-  %option{:name => "op_margin", :value => "op_margin"} Operating Margin
-  %option{:name => "revenue", :value => "revenue"} Revenue
-  %option{:name => "bookings", :value => "bookings"} Bookings
-%p
-  Achievement Percentage
-%form{:action => "/", :method => "post"}
+%form{:action => "/", :method => "post", :name => "value_form"}
+  %p
+    Which Curve?
+  %select{:name => "curves", :form => "value_form"}
+    - @curves.each_key do |x|
+      = "<option value=#{x} name=#{x}> #{x} </option>"
+  %p
+    Achievement Percentage
   %input{:name => "message", :type => "text"}
     %input{:type => "submit"}
 %p
   Payout Percentage:
-  %input#test3{:name => "pay_out", :type => "text", :value => @pay}/
+  %input#test3{:name => "pay_out", :type => "text", :value => @pay}
   (%)
 
 %table{:border => "0", :class => "curve_tab"}

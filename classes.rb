@@ -26,6 +26,10 @@ class Curve
         @int_curve = @int_data.to_a
         #@int_curve.each { |x, y| puts "#{x} - #{y}\n"}
     end
+    #method to print the curve
+    def print_curve
+        @int_data.each {|x,y| puts "#{x} -> #{y} "}
+    end
     
     #This calulates the payout % between two points
     def payout(c)

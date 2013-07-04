@@ -39,6 +39,7 @@ get '/' do
     @c_name_test = params[:curves]
     @point = params[:message]
     @curves = curves
+    @curves.each {|k,v| puts v.int_data}
     #map to the view
     haml :index
 end

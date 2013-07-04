@@ -15,45 +15,20 @@
         %script{:src => "js/modernizr.custom.js"}
         %script{:src => "//www.google.com/jsapi"}
         %script{:src => "js/chartkick.js"}
+        %script{:src => "js/script.js"}
+        %script{:src => "http://code.jquery.com/jquery-1.10.1.min.js"}
+        %script{:src => "http://code.jquery.com/jquery-migrate-1.2.1.min.js"}
     / Load the AJAX API
   %script{:src => "https://www.google.com/jsapi", :type => "text/javascript"}
   :javascript
-    // Load the Visualization API and the piechart package.
-    google.load('visualization', '1.0', {'packages':['corechart']});
-    console.log('#{@title}')
-    // Set a callback to run when the Google Visualization API is loaded.
-    google.setOnLoadCallback(drawChart);
-
-    // Callback that creates and populates a data table,
-    // instantiates the pie chart, passes in the data and
-    // draws it.
-    function drawChart() {
-    
-      // Create JSON object from txt file
-      var json_table = #{@curve.to_json}
-      
-      var t_data_json = new google.visualization.DataTable(json_table);
-      t_data_json.addColumn('number','Achievement');
-      t_data_json.addColumn('number','Payout');      
-
-      var data = new google.visualization.arrayToDataTable([
-          ['Achievement', 'Payout'],
-          [0,  0],
-          [10,  20],
-          [20,  40],
-          [50,  50,],
-          [60, 80],
-          [100,100],
-          [110,120],
-          [200,120]
-        ]);
-
-      // Set chart options
-      var options = {'title':'Payout Curve', colors: ['#0d77b6'], height: 400, width: 600, titleTextStyle: {color:'#0d77b6'}};
-
-      // Instantiate and draw our chart, passing in some options.
-      var chart = new google.visualization.AreaChart(document.getElementById('chart_div'));
-      chart.draw(data, options);
+    // Combobox selection script to populate table
+    function getComboA(sel) {
+      var value = sel.options[sel.selectedIndex].value;
+      console.log(value);
+      var object = #{@curves.to_json};
+      console.log(object);
+      document.getElementById('#table').innerHTML="W3Schools";
+    }
     }
   %body.cbp-spmenu-push
     %nav#cbp-spmenu-s1.cbp-spmenu.cbp-spmenu-vertical.cbp-spmenu-left

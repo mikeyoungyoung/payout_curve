@@ -1,25 +1,7 @@
-#chart_div {position: relative; float: left; }
+#chart_div {position: relative;}
 
-/*td { background: #F3F3F3; height: 100px; width: 100px;} */
-
-/*.curve_tab {float: left}*/
-
-/*.curve_tab tr {background: #7EB6D9;
-                height: 1em;
-                color: black;}
-
-.curve_tab td {background: #FFFFFF;
-                height: 1em;}
-
-#td_link_2 {height: 100%;}
-
-#td_link_2 a { color: black; display: block; line-height: 200px;}
-
-#td_link_1 {height: 100%;}
-
-#td_link_1 a { color: black; display: block; line-height: 100px;}
-
-.tiles {background: #F3F3F3; height: 100px; width: 100px;}*/
+.curve_panel tr {vertical-align: top;}
+.curve_panel tr td {padding-right: 10%;}
 
 /* Contacts Styling for the lifted edges */
 

@@ -1,7 +1,8 @@
 #chart_div {position: relative;}
 
 .curve_panel tr {vertical-align: top;}
-.curve_panel tr td {padding-right: 10%; margin-right: 10%;}
+.curve_panel th {text-decoration: underline;}
+.curve_panel td tr {padding-right: 10%; margin-right: 10%;}
 
 /* Contacts Styling for the lifted edges */
 

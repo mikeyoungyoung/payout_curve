@@ -39,7 +39,6 @@ get '/' do
     @c_name_test = params[:curves]
     @point = params[:message]
     @curves = curves
-    @curves.each {|k,v| puts v.int_data}
     #map to the view
     haml :index
 end
@@ -50,13 +49,12 @@ post '/' do
     @curve = profit.int_data
     @c_name_test = params[:curves]
     @point = params[:message]
-    puts params[:curves]
+    @curves = curves
     if params[:message].nil?
         @pay = 0.0
     else
         @pay = profit.payout(params[:message].to_f)
     end
-    @curves = curves
     puts @curves
     haml :index
 end

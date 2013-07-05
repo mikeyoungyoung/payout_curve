@@ -19,16 +19,17 @@ profit = Curve.new("profit")
 profit.create_curve("curve_profit.txt")
 revenue = Curve.new("revenue")
 revenue.create_curve("revenue.txt")
-revenue.print_curve
 utilization = Curve.new("utilization.txt")
 utilization.create_curve("utilization.txt")
-utilization.print_curve
+ae_2013 = Curve.new("AE 2013")
+ae_2013.create_curve("ae_2013.txt")
 
 #create hash of objects to pass curves
 curves = Hash.new
 curves[:profit] = profit
 curves[:revenue] = revenue
 curves[:utilization] = utilization
+curves[:ae_2013] = ae_2013
 
 #class WebApp < Sinatra::Base
 
@@ -54,7 +55,7 @@ post '/' do
     #evaluate for each curve and store in a hash
     #new evaluation points hash
     @val_pts = Hash.new
-    puts @curves[:profit].int_data
+    #puts @curves[:profit].int_data
     @curves.each_pair do |k,v|
         @val_pts[k] = v.payout(params[:message].to_f)
         #puts "Inside the hash creation"

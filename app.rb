@@ -39,6 +39,7 @@ get '/' do
     @c_name_test = params[:curves]
     @point = params[:message]
     @curves = curves
+    @val_pts = Hash.new
     #map to the view
     haml :index
 end
@@ -55,9 +56,7 @@ post '/' do
     @val_pts = Hash.new
     puts @curves[:profit].int_data
     @curves.each_pair do |k,v|
-        #@val_pts[:k] = v.payout(params[:message].to_f)
-        index = k
-        @val_pts[index] = v.payout(params[:message].to_f)
+        @val_pts[k] = v.payout(params[:message].to_f)
         #puts "Inside the hash creation"
         #puts "#{k}: #{v.int_data}"
     end

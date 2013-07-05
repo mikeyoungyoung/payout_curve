@@ -57,7 +57,7 @@ post '/' do
     @val_pts = Hash.new
     #puts @curves[:profit].int_data
     @curves.each_pair do |k,v|
-        @val_pts[k] = v.payout(params[:message].to_f)
+        @val_pts[k] = v.payout(params[:message].to_f).round(2)
         #puts "Inside the hash creation"
         #puts "#{k}: #{v.int_data}"
     end

@@ -8,10 +8,6 @@
     Achievement Percentage
   %input{:name => "message", :type => "text"}
     %input{:type => "submit"}
-%p
-  Payout Percentage:
-  %input#test3{:name => "pay_out", :type => "text", :value => @pay}
-  (%)
 %table{:class => "curve_panel"}
   %tr
     - @curves.each do |k,v|

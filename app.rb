@@ -62,11 +62,11 @@ post '/' do
     end
     puts "full hash"
     puts @val_pts
-    if params[:message].nil?
-        @pay = 0.0
-    else
-        @pay = profit.payout(params[:message].to_f)
-    end
+    #if params[:message].nil?
+    #    @pay = 0.0
+    #else
+    #    @pay = profit.payout(params[:message].to_f)
+    #end
     puts @curves
     haml :index
 end

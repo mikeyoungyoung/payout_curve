@@ -12,12 +12,18 @@
   Payout Percentage:
   %input#test3{:name => "pay_out", :type => "text", :value => @pay}
   (%)
-
+%div
+  - @val_pts.each_value do |v|
+    = "#{v}"
 %table{:class => "curve_panel"}
   %tr
     - @curves.each do |k,v|
       %td
         = "<h2>#{k}</h2>"
+        %p
+          Payout Percentage:
+          %input#payout_val{:name => "payout_val", :type => "text", :value => @val_pts[k]}
+          (%)
         %table{:border => "0", :class => "curve_tab"}
           %tr
             %th Achievement

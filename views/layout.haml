@@ -16,8 +16,6 @@
         %script{:src => "//www.google.com/jsapi"}
         %script{:src => "js/chartkick.js"}
         %script{:src => "js/script.js"}
-        %script{:src => "http://code.jquery.com/jquery-1.10.1.min.js"}
-        %script{:src => "http://code.jquery.com/jquery-migrate-1.2.1.min.js"}
     / Load the AJAX API
   %script{:src => "https://www.google.com/jsapi", :type => "text/javascript"}
   :javascript
@@ -25,10 +23,9 @@
     function getComboA(sel) {
       var value = sel.options[sel.selectedIndex].value;
       console.log(value);
-      var object = #{@curves.to_json};
+      var object = #{@curve};
       console.log(object);
       document.getElementById('#table').innerHTML="W3Schools";
-    }
     }
   %body.cbp-spmenu-push
     %nav#cbp-spmenu-s1.cbp-spmenu.cbp-spmenu-vertical.cbp-spmenu-left

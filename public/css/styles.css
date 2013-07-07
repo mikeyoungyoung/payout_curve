@@ -1,4 +1,10 @@
 #chart_div {position: relative;}
+#result_input {
+-moz-box-shadow:    inset 0 0 5px #47a3da;
+   -webkit-box-shadow: inset 0 0 5px #47a3da;
+   box-shadow:         inset 0 0 5px #47a3da;
+   border: solid 1px #47a3da;
+}
 
 .curve_panel tr {vertical-align: top;}
 .curve_panel th {text-decoration: underline;}

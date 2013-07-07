@@ -1,15 +1,14 @@
 %section
   %div{:class => "section group"}
-    %div{:class => "col span_1_of_8"}
-      - @curves.each do |k,v|
-        %td
-          = "<h2>#{k}</h2>"
-          %table{:border => "0", :class => "curve_tab"}
-            %tr
-              %th Achievement
-              %th Payout
-            - @curves[k].int_data.each do |x,y|
-              = "<tr><td> #{x} </td> <td>#{y}</td></tr>"
+    - @curves.each do |k,v|
+      %div{:class => "col span_1_of_8"}
+        = "<h2>#{k}</h2>"
+        %table{:border => "0", :class => "curve_tab"}
+          %tr
+            %th Achievement
+            %th Payout
+          - @curves[k].int_data.each do |x,y|
+            = "<tr><td> #{x} </td> <td>#{y}</td></tr>"
 %section
   %div{:class => "section group"}
     %div{:class => "col span_1_of_8"}

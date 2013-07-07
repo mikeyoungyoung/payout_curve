@@ -52,10 +52,9 @@
       function getComboA(sel) {
         var value = sel.options[sel.selectedIndex].value;
         console.log(value);
-        var curves = new Array();
-        curves = #{@curves[:profit].int_data.to_a};
-        console.log(curves);
-        console.log(curves[0][1]);
+        //var curves = new Array();
+        //console.log(curves);
+        //console.log(curves[0][1]);
         document.getElementById("display_curve").value = value;
       }
 

@@ -87,6 +87,7 @@ get '/results' do
 end
 
 get '/contact' do
+    @curves = curves
     haml :contact
 end
 
@@ -107,13 +108,13 @@ end
 post '/tiles' do
 
     @c_name_test = params[:curves]
-    puts "&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&"
+    #puts "&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&"
     @sym = params[:display_curve].to_sym
-    puts params[:display_curve].class
-    puts @sym
-    @display = curves[@sym]
-    puts @display.int_data
-    puts "$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$"
+    #puts params[:display_curve].class
+    #puts @sym
+    #@display = curves[@sym]
+    #puts @display.int_data
+    #puts "$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$"
     @curves = curves
     #evaluate for each curve and store in a hash
 

@@ -1,4 +1,30 @@
-%h1
-  This is the title
-%h2
-  Content Goes Here
+%section
+  %div{:class => "section group"}
+    %div{:class => "col span_1_of_8"}
+      - @curves.each do |k,v|
+        %td
+          = "<h2>#{k}</h2>"
+          %table{:border => "0", :class => "curve_tab"}
+            %tr
+              %th Achievement
+              %th Payout
+            - @curves[k].int_data.each do |x,y|
+              = "<tr><td> #{x} </td> <td>#{y}</td></tr>"
+%section
+  %div{:class => "section group"}
+    %div{:class => "col span_1_of_8"}
+      1 of 8
+    %div{:class => "col span_1_of_8"}
+      2 of 8
+    %div{:class => "col span_1_of_8"}
+      3 of 8
+    %div{:class => "col span_1_of_8"}
+      4 of 8
+    %div{:class => "col span_1_of_8"}
+      5 of 8
+    %div{:class => "col span_1_of_8"}
+      6 of 8
+    %div{:class => "col span_1_of_8"}
+      7 of 8
+    %div{:class => "col span_1_of_8"}
+      8 of 8

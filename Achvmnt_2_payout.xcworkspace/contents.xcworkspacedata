@@ -26,6 +26,24 @@
       location = "group:public/css/default.css">
    </FileRef>
    <FileRef
+      location = "group:public/css/8cols.css">
+   </FileRef>
+   <FileRef
+      location = "group:public/css/col.css">
+   </FileRef>
+   <FileRef
+      location = "group:public/css/480.css">
+   </FileRef>
+   <FileRef
+      location = "group:public/css/768.css">
+   </FileRef>
+   <FileRef
+      location = "group:public/css/1024.css">
+   </FileRef>
+   <FileRef
+      location = "group:public/css/html5reset.css">
+   </FileRef>
+   <FileRef
       location = "group:views/index.haml">
    </FileRef>
    <FileRef
@@ -36,6 +54,12 @@
    </FileRef>
    <FileRef
       location = "group:views/layout.haml">
+   </FileRef>
+   <FileRef
+      location = "group:public/js/responsivegridsystem.js">
+   </FileRef>
+   <FileRef
+      location = "group:public/js/selectivizr-min.js">
    </FileRef>
    <FileRef
       location = "group:views/contact.haml">

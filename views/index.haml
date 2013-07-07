@@ -1,26 +1,14 @@
-%form{:action => "/", :method => "post", :name => "value_form"}
-  %p
-    Which Curve?
-  %select{:name => "curves", :form => "value_form", :onchange => 'getComboA(this)'}
-    - @curves.each_key do |x|
-      = "<option value=#{x} name=#{x}> #{x} </option>"
-  %p
-    Achievement Percentage
-  %input{:name => "message", :type => "text"}
-    %input{:type => "submit"}
-%table{:class => "curve_panel"}
-  %tr
+%section
+  %form{:action => "/", :method => "post", :name => "value_form"}
+    %h2
+      Achievement Percentage &#40;&#37;&#41;
+    %input{:name => "message", :type => "number", :step => "any"}
+      %input{:type => "submit"}
+%section
+  %div{:class => "section group"}
+    %h3
+      Payout Percentage &#40;&#37;&#41;
     - @curves.each do |k,v|
-      %td
-        = "<h2>#{k}</h2>"
-        %p
-          Payout Percentage:
-          %input#payout_val{:name => "payout_val", :type => "text", :value => @val_pts[k]}
-          (%)
-        %table{:border => "0", :class => "curve_tab"}
-          %tr
-            %th Achievement
-            %th Payout
-          - @curves[k].int_data.each do |x,y|
-            = "<tr><td> #{x} </td> <td>#{y}</td></tr>"
-
+      %div{:class => "col span_1_of_8"}
+        = "<h4>#{k}</h4>"
+        %input#payout_val{:name => "payout_val", :type => "text", :value => @val_pts[k]}

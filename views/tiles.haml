@@ -1,14 +1,21 @@
 %section
-  %div{:class => "section group"}
-    - @curves.each do |k,v|
-      %div{:class => "col span_1_of_8"}
-        = "<h2>#{k}</h2>"
-        %table{:border => "0", :class => "curve_tab"}
-          %tr
-            %th Achievement
-            %th Payout
-          - @curves[k].int_data.each do |x,y|
-            = "<tr><td> #{x} </td> <td>#{y}</td></tr>"
+  %form{:action => "/tiles", :method => "post", :name => "curve_form"}
+    %select{:name => "curve_list", :onchange => "getComboA(this)", :form => "curve_form"}
+      - @curves.each do |k,v|
+        %option{:value => k} #{k}
+    %input#display_curve{:name => "display_curve", :type => "hidden", :value => ""}
+      %input{:type => "submit", :value => "Display"}
+%div{:class => "section group"}
+  %div{:class => "col span_2_of_8"}
+    %h2
+      = @sym
+    %table{:border => "0"}
+      %tr
+        %th Achievement
+        %th Payout
+      - @curves[@sym].int_data.each do |x,y|
+        = "<tr><td> #{x} </td> <td>#{y}</td></tr>"
+
 %section
   %div{:class => "section group"}
     %div{:class => "col span_1_of_8"}

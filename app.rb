@@ -98,34 +98,25 @@ get '/tiles' do
     @point = params[:message]
     @curves = curves
     @val_pts = Hash.new
+    #set @sym for first loading
+    @sym = "profit".to_sym
     #map to the view
     haml :tiles
 end
 
 post '/tiles' do
-    @title = profit.name
-    @curve_name = profit.filename
-    @curve = profit.int_data
+
     @c_name_test = params[:curves]
-    @point = params[:message]
+    puts "&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&"
+    @sym = params[:display_curve].to_sym
+    puts params[:display_curve].class
+    puts @sym
+    @display = curves[@sym]
+    puts @display.int_data
+    puts "$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$"
     @curves = curves
     #evaluate for each curve and store in a hash
-    #new evaluation points hash
-    @val_pts = Hash.new
-    #puts @curves[:profit].int_data
-    @curves.each_pair do |k,v|
-        @val_pts[k] = v.payout(params[:message].to_f).round(2)
-        #puts "Inside the hash creation"
-        #puts "#{k}: #{v.int_data}"
-    end
-    puts "full hash"
-    puts @val_pts
-    #if params[:message].nil?
-    #    @pay = 0.0
-    #else
-    #    @pay = profit.payout(params[:message].to_f)
-    #end
-    puts @curves
+
     haml :tiles
 end
 

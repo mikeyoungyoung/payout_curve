@@ -1,10 +1,38 @@
 #chart_div {position: relative;}
-#result_input {
--moz-box-shadow:    inset 0 0 5px #47a3da;
-   -webkit-box-shadow: inset 0 0 5px #47a3da;
-   box-shadow:         inset 0 0 5px #47a3da;
-   border: solid 1px #47a3da;
+
+section {
+	clear: both;
+	padding: 0px;
+	margin: 0px;
 }
+
+.maincontent{
+				clear: both;
+				width: 80%; /* 1000px / 1250px */
+				font-size: 0.8125em; /* 13 / 16 */
+				max-width: 92.3em; /* 1200px / 13 */
+				margin: 0 auto;
+				padding: 1em 0px;
+				color: #333;
+				line-height: 1.5em;
+				position: relative;
+}
+
+
+table { 
+border-collapse : collapse;
+border-spacing : 0;
+margin-bottom : 1.4em; 
+width : 100%; }
+
+th, td, caption { 
+padding : .25em 10px .25em 5px; }
+
+tfoot { 
+font-style : italic; }
+
+caption { 
+background-color : transparent; }
 
 .curve_panel tr {vertical-align: top;}
 .curve_panel th {text-decoration: underline;}

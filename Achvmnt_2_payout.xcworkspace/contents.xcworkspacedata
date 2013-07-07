@@ -44,16 +44,19 @@
       location = "group:public/css/html5reset.css">
    </FileRef>
    <FileRef
-      location = "group:views/index.haml">
+      location = "group:public/css/responsivegridsystem.css">
    </FileRef>
    <FileRef
-      location = "group:views/results.haml">
+      location = "group:views/index.haml">
    </FileRef>
    <FileRef
       location = "group:views/tiles.haml">
    </FileRef>
    <FileRef
       location = "group:views/layout.haml">
+   </FileRef>
+   <FileRef
+      location = "group:views/results.haml">
    </FileRef>
    <FileRef
       location = "group:public/js/responsivegridsystem.js">

@@ -16,19 +16,14 @@
         %link{:href => "css/8cols.css", :rel => "stylesheet", :type => "text/css"}/
         %link{:href => "css/col.css", :rel => "stylesheet", :type => "text/css"}/
         %link{:href => "css/styles.css", :rel => "stylesheet", :type => "text/css"}/
+        
         %script{:src => "js/modernizr.custom.js"}
         %script{:src => "//www.google.com/jsapi"}
         %script{:src => "js/chartkick.js"}
         %script{:src => "js/script.js"}
     / Load the AJAX API
   %script{:src => "https://www.google.com/jsapi", :type => "text/javascript"}
-  :javascript
-    // Combobox selection script to populate table
-    function getComboA(sel) {
-      var value = sel.options[sel.selectedIndex].value;
-      console.log(value);
 
-    }
   %body.cbp-spmenu-push
     %nav#cbp-spmenu-s1.cbp-spmenu.cbp-spmenu-vertical.cbp-spmenu-left
       %h3 Menu
@@ -48,11 +43,22 @@
           / Class "cbp-spmenu-open" gets applied to menu
           %button#showLeft Menu
         
-        #content
+        #maincontent
           =yield
     / Classie - class helper functions by @desandro https://github.com/desandro/classie
     %script{:src => "js/classie.js"}
     :javascript
+          // Combobox selection script to populate table
+      function getComboA(sel) {
+        var value = sel.options[sel.selectedIndex].value;
+        console.log(value);
+        var curves = new Array();
+        curves = #{@curves[:profit].int_data.to_a};
+        console.log(curves);
+        console.log(curves[0][1]);
+        document.getElementById("display_curve").value = value;
+      }
+
       var menuLeft = document.getElementById( 'cbp-spmenu-s1' ),
       	showLeft = document.getElementById( 'showLeft' ),
       	body = document.body;

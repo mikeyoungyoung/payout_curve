@@ -55,9 +55,6 @@ get '/' do
 end
 
 post '/' do
-    @title = profit.name
-    @curve_name = profit.filename
-    @curve = profit.int_data
     @c_name_test = params[:curves]
     @point = params[:message].to_f
     @curves = curves
@@ -111,12 +108,14 @@ post '/tiles' do
     @c_name_test = params[:curves]
     #puts "&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&"
     @sym = params[:display_curve].to_sym
+
     #puts params[:display_curve].class
     #puts @sym
     #@display = curves[@sym]
     #puts @display.int_data
     #puts "$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$"
-    puts curves[@sym].name
+    @sym = "profit".to_sym if params[:display_curve].empty?
+    puts @sym.to_s << "^^^^^^^^^^^^^^^"
     @curves = curves
     #evaluate for each curve and store in a hash
 

@@ -5,31 +5,31 @@
 body { 
 margin : 0 auto;
 padding : 0;
-font : 100%/1.4 'lucida sans unicode', 'lucida grande', 'Trebuchet MS', verdana, arial, helvetica, helve, sans-serif; 	
-color : #000; 
+/* font : 100%/1.4 'lucida sans unicode', 'lucida grande', 'Trebuchet MS', verdana, arial, helvetica, helve, sans-serif;*/
+/*color : #000; */
 text-align: center;
-background: #fff url(/images/bodyback.png) left top;
+/*background: #fff url(/images/bodyback.png) left top;*/
 }
 
 button, 
 input, 
 select, 
 textarea { 
-font-family : MuseoSlab100, lucida sans unicode, 'lucida grande', 'Trebuchet MS', verdana, arial, helvetica, helve, sans-serif; 
+/*font-family : MuseoSlab100, lucida sans unicode, 'lucida grande', 'Trebuchet MS', verdana, arial, helvetica, helve, sans-serif; */
 color : #333; }
 
 /*  HEADINGS  ============================================================================= */
 
 h1, h2, h3, h4, h5, h6 {
-font-family:  MuseoSlab300, 'lucida sans unicode', 'lucida grande', 'Trebuchet MS', verdana, arial, helvetica, helve, sans-serif;
+/*font-family:  MuseoSlab300, 'lucida sans unicode', 'lucida grande', 'Trebuchet MS', verdana, arial, helvetica, helve, sans-serif;*/
 font-weight : normal;
 margin-top: 0px;
 letter-spacing: -1px;
 }
 
 h1 { 
-font-family:  LeagueGothicRegular, 'lucida sans unicode', 'lucida grande', 'Trebuchet MS', verdana, arial, helvetica, helve, sans-serif;
-color: #000;
+/*font-family:  LeagueGothicRegular, 'lucida sans unicode', 'lucida grande', 'Trebuchet MS', verdana, arial, helvetica, helve, sans-serif;*/
+/*color: #000;*/
 margin-bottom : 0.2em;
 font-size : 6em; /* 96 / 16 */
 line-height : 1.4;
@@ -164,27 +164,27 @@ bottom : -.25em; }
 
 /* LINKS =============================================================================  */
 
-a { 
+/*a {
 color : #cc1122;
 -webkit-transition: all 0.3s ease;
 -moz-transition: all 0.3s ease;
 -o-transition: all 0.3s ease;
 transition: all 0.3s ease;
 text-decoration: none;
-}
+}*/
 
-a:visited { 
-color : #ee3344; }
+/*a:visited {
+color : #ee3344; }*/
 
 a:focus { 
 outline : thin dotted; 
 color : rgb(0,0,0); }
 
-a:hover, 
+/*a:hover,
 a:active { 
 outline : 0;
 color : #dd2233;
-}
+}*/
 
 
 footer a { 

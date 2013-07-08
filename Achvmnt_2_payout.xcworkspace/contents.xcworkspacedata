@@ -53,6 +53,9 @@
       location = "group:views/tiles.haml">
    </FileRef>
    <FileRef
+      location = "group:views/contact.haml">
+   </FileRef>
+   <FileRef
       location = "group:views/layout.haml">
    </FileRef>
    <FileRef
@@ -63,9 +66,6 @@
    </FileRef>
    <FileRef
       location = "group:public/js/selectivizr-min.js">
-   </FileRef>
-   <FileRef
-      location = "group:views/contact.haml">
    </FileRef>
    <FileRef
       location = "group:public/js/script.js">

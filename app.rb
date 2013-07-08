@@ -64,11 +64,7 @@ post '/' do
     #hash to store all payout per curve
     @val_pts = Hash.new
     #check it 0 was entered
-    if @point <= 0
-          @point = 0.00001
-    else
-          @point = @point
-    end
+    @point = @point <= 0 ? 0.0001 : @point
 
     @curves.each_pair do |k,v|
         @val_pts[k] = v.payout(@point).round(2)

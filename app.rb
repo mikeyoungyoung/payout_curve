@@ -21,8 +21,6 @@ revenue = Curve.new("Revenue 1")
 revenue.create_curve("revenue.txt")
 revenue_2 = Curve.new("Revenue 2")
 revenue_2.create_curve("revenue_2.txt")
-utilization = Curve.new("Utilization")
-utilization.create_curve("utilization.txt")
 ae_2013 = Curve.new("AE 2013")
 ae_2013.create_curve("ae_2013.txt")
 SSRS = Curve.new("SSRS")
@@ -36,7 +34,6 @@ Quan_NonFinancial.create_curve("quan_non-financial.txt")
 curves = Hash.new
 curves[:profit] = profit
 curves[:revenue] = revenue
-curves[:utilization] = utilization
 curves[:ae_2013] = ae_2013
 curves[:revenue_2] = revenue_2
 curves[:SSRS] = SSRS

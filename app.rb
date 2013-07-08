@@ -15,13 +15,13 @@ use Rack::Deflater
 set :haml, :format => :html5
 
 #Create curve objects
-profit = Curve.new("profit")
+profit = Curve.new("Profitability")
 profit.create_curve("curve_profit.txt")
-revenue = Curve.new("revenue")
+revenue = Curve.new("Revenue 1")
 revenue.create_curve("revenue.txt")
-revenue_2 = Curve.new("revenue_2")
+revenue_2 = Curve.new("Revenue 2")
 revenue_2.create_curve("revenue_2.txt")
-utilization = Curve.new("utilization.txt")
+utilization = Curve.new("Utilization")
 utilization.create_curve("utilization.txt")
 ae_2013 = Curve.new("AE 2013")
 ae_2013.create_curve("ae_2013.txt")
@@ -29,6 +29,8 @@ SSRS = Curve.new("SSRS")
 SSRS.create_curve("SSRS.txt")
 SWRev_Uncapped = Curve.new("Software Revenue: Uncapped")
 SWRev_Uncapped.create_curve("swrev_uncapped.txt")
+Quan_NonFinancial = Curve.new("Quantitative Non-Financial")
+Quan_NonFinancial.create_curve("quan_non-financial.txt")
 
 #create hash of objects to pass curves
 curves = Hash.new
@@ -39,6 +41,7 @@ curves[:ae_2013] = ae_2013
 curves[:revenue_2] = revenue_2
 curves[:SSRS] = SSRS
 curves[:SWRev_Uncapped] = SWRev_Uncapped
+curves[:Quan_NonFinancial] = Quan_NonFinancial
 
 #class WebApp < Sinatra::Base
 
@@ -115,6 +118,7 @@ post '/tiles' do
     #@display = curves[@sym]
     #puts @display.int_data
     #puts "$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$"
+    puts curves[@sym].name
     @curves = curves
     #evaluate for each curve and store in a hash
 

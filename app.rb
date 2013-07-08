@@ -64,7 +64,7 @@ post '/' do
     #hash to store all payout per curve
     @val_pts = Hash.new
     #check it 0 was entered
-    if @point == 0
+    if @point <= 0
           @point = 0.00001
     else
           @point = @point

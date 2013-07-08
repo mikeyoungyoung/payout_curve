@@ -59,14 +59,19 @@ post '/' do
     @curve_name = profit.filename
     @curve = profit.int_data
     @c_name_test = params[:curves]
-    @point = params[:message]
+    @point = params[:message].to_f
     @curves = curves
-    #evaluate for each curve and store in a hash
-    #new evaluation points hash
+    #hash to store all payout per curve
     @val_pts = Hash.new
-    #puts @curves[:profit].int_data
+    #check it 0 was entered
+    if @point == 0
+          @point = 0.00001
+    else
+          @point = @point
+    end
+
     @curves.each_pair do |k,v|
-        @val_pts[k] = v.payout(params[:message].to_f).round(2)
+        @val_pts[k] = v.payout(@point).round(2)
         #puts "Inside the hash creation"
         #puts "#{k}: #{v.int_data}"
     end

@@ -18,26 +18,6 @@ section {
 				position: relative;
 }
 
-
-table { 
-border-collapse : collapse;
-border-spacing : 0;
-margin-bottom : 1.4em; 
-width : 100%; }
-
-th, td, caption { 
-padding : .25em 10px .25em 5px; }
-
-tfoot { 
-font-style : italic; }
-
-caption { 
-background-color : transparent; }
-
-.curve_panel tr {vertical-align: top;}
-.curve_panel th {text-decoration: underline;}
-.curve_panel td tr {padding-right: 10%; margin-right: 10%;}
-
 /* Contacts Styling for the lifted edges */
 
 .box p{

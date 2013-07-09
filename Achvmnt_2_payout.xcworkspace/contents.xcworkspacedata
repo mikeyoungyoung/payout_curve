@@ -17,9 +17,6 @@
       location = "group:public/css/styles.css">
    </FileRef>
    <FileRef
-      location = "group:public/css/wrapper.css">
-   </FileRef>
-   <FileRef
       location = "group:public/css/component.css">
    </FileRef>
    <FileRef

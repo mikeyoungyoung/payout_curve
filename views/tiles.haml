@@ -1,18 +1,19 @@
 %section
-  %form{:action => "/tiles", :method => "post", :name => "curve_form"}
-    %select{:name => "curve_list", :onchange => "getComboA(this)", :form => "curve_form"}
-      - @curves.each do |k,v|
-        %option{:value => k}
-          = @curves[k].name
-    %input#display_curve{:name => "display_curve", :type => "hidden", :value => ""}
-    %input{:type => "submit", :value => "Display"}
-%div{:class => "section group"}
-  %h2 
-    = @curves[@sym].name
-  %div
-    %table
-      %tr
-        %th Achievement
-        %th Payout
-      - @curves[@sym].int_data.each do |x,y|
-        = "<tr><td> #{x} </td> <td>#{y}</td></tr>"
+  %div{:class => "section group"}
+    %form{:action => "/tiles", :method => "post", :name => "curve_form"}
+      %select{:name => "curve_list", :onchange => "getComboA(this)", :form => "curve_form"}
+        - @curves.each do |k,v|
+          %option{:value => k}
+            = @curves[k].name
+        %input#display_curve{:name => "display_curve", :type => "hidden", :value => ""}
+          %input{:type => "submit", :value => "Display"}
+  %div{:class => "section group"}
+    %h2
+      = @curves[@sym].name
+    %div{:class => "section group"}
+      %table
+        %tr
+          %th Achievement
+          %th Payout
+        - @curves[@sym].int_data.each do |x,y|
+          = "<tr><td> #{x} </td> <td>#{y}</td></tr>"

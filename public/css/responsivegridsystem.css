@@ -228,7 +228,7 @@ margin-bottom : 1.4em;
 width : 100%; }
 
 th, td, caption { 
-padding : .25em 10px .25em 5px; }
+padding : .25em 10px .25em 5px; max-width: 260px; overflow: hidden;}
 
 tfoot { 
 font-style : italic; }

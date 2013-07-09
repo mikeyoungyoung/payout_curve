@@ -14,6 +14,9 @@ use Rack::Deflater
 
 set :haml, :format => :html5
 
+#^^^^^^^^^^^^^^^^
+#Note:  Maybe here I can read a .txt files in a directory and create the curves
+
 #Create curve objects
 profit = Curve.new("Profitability")
 profit.create_curve("curve_profit.txt")
@@ -60,22 +63,13 @@ post '/' do
     @curves = curves
     #hash to store all payout per curve
     @val_pts = Hash.new
-    #check it 0 was entered
+    #check if evaluation point <=0, set to near zero if true
     @point = @point <= 0 ? 0.0001 : @point
 
     @curves.each_pair do |k,v|
         @val_pts[k] = v.payout(@point).round(2)
-        #puts "Inside the hash creation"
-        #puts "#{k}: #{v.int_data}"
     end
-    puts "full hash"
-    puts @val_pts
-    #if params[:message].nil?
-    #    @pay = 0.0
-    #else
-    #    @pay = profit.payout(params[:message].to_f)
-    #end
-    puts @curves
+
     haml :index
 end
 
@@ -104,25 +98,12 @@ get '/tiles' do
 end
 
 post '/tiles' do
-
-    @c_name_test = params[:curves]
-    #puts "&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&"
     @sym = params[:display_curve].to_sym
-
-    #puts params[:display_curve].class
-    #puts @sym
-    #@display = curves[@sym]
-    #puts @display.int_data
-    #puts "$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$"
+    #in case no value is selected choose default
     @sym = "profit".to_sym if params[:display_curve].empty?
-    puts @sym.to_s << "^^^^^^^^^^^^^^^"
     @curves = curves
-    #evaluate for each curve and store in a hash
 
     haml :tiles
 end
-
-
-#end
 
 __END__

@@ -36,8 +36,8 @@ class Curve
         if c.is_a? Float #Fixnum
             #What is number is 0?
             
-            #what if number is greater than the last point?
-            
+            #what if c >= int_data.last[0][...]?
+            #c = c >= @int_curve.last[0][1] ? @int_curve.last : c
             #get low array and low point
             low_arr = @int_curve.select {|x,y| x.to_f < c }
             low_p = low_arr.last

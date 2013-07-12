@@ -1,4 +1,6 @@
 #!/usr/bin/ruby -w
+# Global Variables
+$tol = 0.0001
 
 hash_to_table = Proc.new { |k,v| "<tr><td>#{k}</td><td>#{v}</td></tr>"}
 
@@ -12,7 +14,7 @@ class Curve
         @name = name
         #  @data = array
     end
-    
+
     #methods
     #Create the curve from a file
     def create_curve(filename)
@@ -35,15 +37,11 @@ class Curve
     #This calulates the payout % between two points
     def payout(c)
         if c.is_a? Float #Fixnum
-            #What is number is 0?
-            eps = 0.0001
             
-            #what if c >= int_data.last[0][...]?
-            max_safe_p = @x_arr.last.to_f - 0.0001
-            c = c >= @x_arr.last.to_f ? max_safe_p : c
+            #Reset the evaluation point if it breaches the upper limit of the curve
+            c = c >= @x_arr.last.to_f ? @x_arr.last.to_f - $tol : c
+            
             #get low array and low point
-            #puts @x_arr.last if c >= @x_arr.last.to_f
-            
             low_arr = @int_curve.select {|x,y| x.to_f < c }
             low_p = low_arr.last
             #get high array and high point

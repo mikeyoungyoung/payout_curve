@@ -24,7 +24,8 @@ class Curve
             @int_data[line.first.to_s] = line.last.to_s
         end
         @int_curve = @int_data.to_a
-        #@int_curve.each { |x, y| puts "#{x} - #{y}\n"}
+        @x_arr = int_curve.map {|x,y| x}
+        @y_arr = int_curve.map {|x,y| y}
     end
     #method to print the curve
     def print_curve
@@ -35,14 +36,19 @@ class Curve
     def payout(c)
         if c.is_a? Float #Fixnum
             #What is number is 0?
+            eps = 0.0001
             
             #what if c >= int_data.last[0][...]?
-            #c = c >= @int_curve.last[0][1] ? @int_curve.last : c
+            max_safe_p = @x_arr.last.to_f - 0.0001
+            c = c >= @x_arr.last.to_f ? max_safe_p : c
             #get low array and low point
+            #puts @x_arr.last if c >= @x_arr.last.to_f
+            
             low_arr = @int_curve.select {|x,y| x.to_f < c }
             low_p = low_arr.last
             #get high array and high point
             high_arr = @int_curve.select {|x,y| x.to_f >= c }
+            #high_p = c >= high_arr.first ? high_arr.first[0] - eps : high_arr.first
             high_p = high_arr.first
             #Evaluate equation of line in two point form
             return (high_p[1].to_f-low_p[1].to_f)/(high_p[0].to_f-low_p[0].to_f)*(c - low_p[0].to_f) + low_p[1].to_f

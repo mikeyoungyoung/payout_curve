@@ -46,6 +46,10 @@ curves[:Quan_NonFinancial] = Quan_NonFinancial
 
 #class WebApp < Sinatra::Base
 
+before do
+    @flash = session.delete(:flash)
+end
+
 get '/' do
     @title = profit.name
     @curve_name = profit.filename
@@ -124,22 +128,42 @@ get '/admin/upload' do
 end
 
 post '/admin/upload' do
-    unless params[:file] &&
-        (tmpfile = params[:file][:tempfile]) &&
-        (name = params[:file][:filename])
-        @error = "No file selected"
-        return haml(:upload)
-    end
-    STDERR.puts "Uploading file, original name #{name.inspect}"
-    while blk = tmpfile.read(65536)
-        # here you would write it to its final location
+    #unless params[:file] &&
+    #    (tmpfile = params[:file][:tempfile]) &&
+    #    (name = params[:file][:filename])
+    #    @error = "No file selected"
+    #    return haml(:admin)
+    #end
+    #STDERR.puts "Uploading file, original name #{name.inspect}"
+    #while blk = tmpfile.read(65536)
+    #    # here you would write it to its final location
+    #    directory = "./public/curves"
+    #    path = File.join(directory, name)
+    #    File.open(path, "wb") do |f|
+    #        f.write(tmpfile.read)
+    #        f.close
+    #    end
+    #
+    #    STDERR.puts blk.inspect
+    #end
+    #"Upload complete"
+    
+    if params[:file]
+        filename = params[:file][:filename]
+        file = params[:file][:tempfile]
         directory = "./public/curves"
-        path = File.join(directory, name)
-        File.open(path, "w+") { |f| f.write(tmpfile.read) }
-        STDERR.puts blk.inspect
+        File.open(File.join(directory, filename), 'wb') do |f|
+            f.write file.read
+        end
+        
+        flash 'Upload successful'
+    else
+        flash 'You have to choose a file'
     end
-    "Upload complete"
+    
+    redirect '/admin'
 end
+
 
 
 __END__

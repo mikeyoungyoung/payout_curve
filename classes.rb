@@ -2,6 +2,12 @@
 # Global Variables
 $tol = 0.0001
 
+helpers do
+    def flash(message = '')
+        session[:flash] = message
+    end
+end
+
 hash_to_table = Proc.new { |k,v| "<tr><td>#{k}</td><td>#{v}</td></tr>"}
 
 #test_hash ={1=>1, 2=>2, 3=>3}

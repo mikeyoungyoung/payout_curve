@@ -1,0 +1,14 @@
+%section
+  %div{:class => "section group", :name => "curve_maint"}
+    %form{:action => "/admin", :method => "post", :name => "curve_form"}
+      %select{:name => "curve_list", :onchange => " ", :form => "curve_form"}
+        - @curves.each do |k,v|
+          %option{:value => k}
+            = @curves[k].name
+    %button Create
+    %button Update
+    %button Delete
+%form{:action=>"/admin/upload",:method=>"post"   ,:enctype=>"multipart/form-data"}
+  %input{:type=>"file",:name=>"file"}
+  %input{:type => "text", :name => "curve_name", :value => "Enter Curve Name"}
+  %input{:type=>"submit",:value=>"Upload"}

@@ -44,6 +44,10 @@
       location = "group:public/css/responsivegridsystem.css">
    </FileRef>
    <FileRef
+      location = "group:views/admin.haml"
+      assignedFileDataType = "public.html">
+   </FileRef>
+   <FileRef
       location = "group:views/index.haml">
    </FileRef>
    <FileRef

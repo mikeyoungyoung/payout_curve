@@ -84,7 +84,7 @@ get '/contact' do
 end
 
 get '/tiles' do
-    @title = profit.name
+
     @curve_name = profit.filename
     @curve = profit.int_data
     @c_name_test = params[:curves]
@@ -105,5 +105,40 @@ post '/tiles' do
 
     haml :tiles
 end
+
+get '/admin' do
+
+    @curves = curves
+    #set @sym for first loading
+    @sym = "profit".to_sym
+    #map to the view
+    
+    haml :admin
+end
+
+get '/admin/upload' do
+    #upload the file to the server location
+    
+    haml :admin
+end
+
+post '/admin/upload' do
+    unless params[:file] &&
+        (tmpfile = params[:file][:tempfile]) &&
+        (name = params[:file][:filename])
+        @error = "No file selected"
+        return haml(:upload)
+    end
+    STDERR.puts "Uploading file, original name #{name.inspect}"
+    while blk = tmpfile.read(65536)
+        # here you would write it to its final location
+        directory = "/"
+        path = File.join(directory, name)
+        File.open(path, "w+") { |f| f.write(tmpfile.read) }
+        STDERR.puts blk.inspect
+    end
+    "Upload complete"
+end
+
 
 __END__

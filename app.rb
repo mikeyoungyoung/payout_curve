@@ -5,6 +5,7 @@ require 'haml'
 require 'chartkick'
 require 'json'
 require_relative 'classes'
+include FileUtils::Verbose
 
 # We set the cache control for static resources to approximately 1 month
 set :static_cache_control, [:public, :max_age => 2678400]
@@ -132,7 +133,7 @@ post '/admin/upload' do
     STDERR.puts "Uploading file, original name #{name.inspect}"
     while blk = tmpfile.read(65536)
         # here you would write it to its final location
-        directory = "/"
+        directory = "./public/curves"
         path = File.join(directory, name)
         File.open(path, "w+") { |f| f.write(tmpfile.read) }
         STDERR.puts blk.inspect

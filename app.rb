@@ -7,6 +7,11 @@ require 'json'
 require_relative 'classes'
 include FileUtils::Verbose
 
+#for global authentification
+#use Rack::Auth::Basic, "Restricted Area" do |username, password|
+#    username == 'admin' and password == 'admin'
+#end
+
 # We set the cache control for static resources to approximately 1 month
 set :static_cache_control, [:public, :max_age => 2678400]
 
@@ -112,7 +117,7 @@ post '/tiles' do
 end
 
 get '/admin' do
-
+    protected!
     @curves = curves
     #set @sym for first loading
     @sym = "profit".to_sym
@@ -123,7 +128,7 @@ end
 
 get '/admin/upload' do
     #upload the file to the server location
-    
+    protected!
     haml :admin
 end
 

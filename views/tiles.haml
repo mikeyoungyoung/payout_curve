@@ -2,7 +2,7 @@
   %div{:class => "section group"}
     %form{:action => "/tiles", :method => "post", :name => "curve_form"}
       %select{:name => "curve_list", :onchange => "getComboA(this)", :form => "curve_form"}
-        - @curves.each do |k,v|
+        - @curves.each_key do |k|
           %option{:value => k}
             = @curves[k].name
         %input#display_curve{:name => "display_curve", :type => "hidden", :value => ""}

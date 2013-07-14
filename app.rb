@@ -2,7 +2,6 @@ require 'rubygems'
 require 'bundler/setup'
 require 'sinatra'
 require 'haml'
-require 'chartkick'
 require 'json'
 require_relative 'classes'
 include FileUtils::Verbose
@@ -24,30 +23,28 @@ set :haml, :format => :html5
 #Note:  Maybe here I can read a .txt files in a directory and create the curves
 
 #Create curve objects
-profit = Curve.new("Profitability")
-profit.create_curve("curve_profit.txt")
-revenue = Curve.new("Revenue 1")
-revenue.create_curve("revenue.txt")
-revenue_2 = Curve.new("Revenue 2")
-revenue_2.create_curve("revenue_2.txt")
-ae_2013 = Curve.new("AE 2013")
-ae_2013.create_curve("ae_2013.txt")
-SSRS = Curve.new("SSRS")
-SSRS.create_curve("SSRS.txt")
-SWRev_Uncapped = Curve.new("Software Revenue: Uncapped")
-SWRev_Uncapped.create_curve("swrev_uncapped.txt")
-Quan_NonFinancial = Curve.new("Quantitative Non-Financial")
-Quan_NonFinancial.create_curve("quan_non-financial.txt")
-
-#create hash of objects to pass curves
 curves = Hash.new
-curves[:profit] = profit
-curves[:revenue] = revenue
-curves[:ae_2013] = ae_2013
-curves[:revenue_2] = revenue_2
-curves[:SSRS] = SSRS
-curves[:SWRev_Uncapped] = SWRev_Uncapped
-curves[:Quan_NonFinancial] = Quan_NonFinancial
+#for each file in curves director
+Dir.chdir("./public/curves") do
+    files = Dir.glob("*.txt")
+    puts "These files will be used:"
+    puts files
+    puts "^^^^^^^^^^^^^^^^^^^^^^^^^^^^"
+    #create curves for each file
+    i = 0
+    files.each do |file|
+        puts "Creating: #{file}"
+        filename = file.to_s
+        object = Curve.new(filename)
+        object.create_curve(filename)
+        curves[file] = object
+        curves.each_key {|k| puts "#{k}: iteration #{i}" }
+        i += 1
+    end
+end
+puts "List all curves"
+curves.each_key {|k| puts curves[k].name}
+puts Dir.pwd
 
 #class WebApp < Sinatra::Base
 
@@ -56,9 +53,6 @@ before do
 end
 
 get '/' do
-    @title = profit.name
-    @curve_name = profit.filename
-    @curve = profit.int_data
     @c_name_test = params[:curves]
     @point = params[:message]
     @curves = curves
@@ -95,24 +89,19 @@ end
 
 get '/tiles' do
 
-    @curve_name = profit.filename
-    @curve = profit.int_data
-    @c_name_test = params[:curves]
-    @point = params[:message]
     @curves = curves
-    @val_pts = Hash.new
-    #set @sym for first loading
-    @sym = "profit".to_sym
+    @sym = @curves.keys[0]
     #map to the view
+
     haml :tiles
 end
 
 post '/tiles' do
-    @sym = params[:display_curve].to_sym
-    #in case no value is selected choose default
-    @sym = "profit".to_sym if params[:display_curve].empty?
     @curves = curves
-
+    @sym = params[:display_curve]
+    #in case no value is selected choose default
+    @sym = @curves.keys[0] if params[:display_curve].empty?
+    
     haml :tiles
 end
 
@@ -120,7 +109,7 @@ get '/admin' do
     protected!
     @curves = curves
     #set @sym for first loading
-    @sym = "profit".to_sym
+    @sym = @curves.keys[0].to_sym
     #map to the view
     
     haml :admin

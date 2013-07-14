@@ -4,12 +4,12 @@
       %select{:name => "curve_list", :onchange => "getComboA(this)", :form => "curve_form"}
         - @curves.each_key do |k|
           %option{:value => k}
-            = @curves[k].name
+            = @curves[k].name.sub(".txt", "")
         %input#display_curve{:name => "display_curve", :type => "hidden", :value => ""}
           %input{:type => "submit", :value => "Display"}
   %div{:class => "section group"}
     %h2
-      = @curves[@sym].name
+      = @curves[@sym].name.sub(".txt", "")
     %div{:class => "section group"}
       %table
         %tr

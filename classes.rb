@@ -37,8 +37,8 @@ class Curve
     def create_curve(filename)
         @filename = filename
         @int_data = {}
-        puts ">>>>> Inside create_curve method"
-        puts ">>>>> #{@filename}"
+        #puts ">>>>> Inside create_curve method"
+        #puts ">>>>> #{@filename}"
         
         File.open(@filename, 'r').each_line do |line|
             line = line.strip.split ' '

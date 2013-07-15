@@ -27,24 +27,24 @@ curves = Hash.new
 #for each file in curves director
 Dir.chdir("./public/curves") do
     files = Dir.glob("*.txt")
-    puts "These files will be used:"
-    puts files
-    puts "^^^^^^^^^^^^^^^^^^^^^^^^^^^^"
+    #puts "These files will be used:"
+    #puts files
+    #puts "^^^^^^^^^^^^^^^^^^^^^^^^^^^^"
     #create curves for each file
-    i = 0
+    #i = 0
     files.each do |file|
-        puts "Creating: #{file}"
+        #puts "Creating: #{file}"
         filename = file.to_s
         object = Curve.new(filename)
         object.create_curve(filename)
         curves[file] = object
-        curves.each_key {|k| puts "#{k}: iteration #{i}" }
-        i += 1
+        #curves.each_key {|k| puts "#{k}: iteration #{i}" }
+        #i += 1
     end
 end
-puts "List all curves"
-curves.each_key {|k| puts curves[k].name}
-puts Dir.pwd
+#puts "List all curves"
+#curves.each_key {|k| puts curves[k].name}
+#puts Dir.pwd
 
 #class WebApp < Sinatra::Base
 

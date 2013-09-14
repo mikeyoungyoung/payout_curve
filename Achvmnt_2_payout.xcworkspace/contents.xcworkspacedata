@@ -1,6 +1,88 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Workspace
    version = "1.0">
+   <Group
+      location = "container:"
+      name = "JavaScript">
+      <FileRef
+         location = "group:public/js/responsivegridsystem.js">
+      </FileRef>
+      <FileRef
+         location = "group:public/js/selectivizr-min.js">
+      </FileRef>
+      <FileRef
+         location = "group:public/js/script.js">
+      </FileRef>
+      <FileRef
+         location = "group:public/js/chartkick.js">
+      </FileRef>
+      <FileRef
+         location = "group:public/js/classie.js">
+      </FileRef>
+      <FileRef
+         location = "group:public/js/modernizr.custom.js">
+      </FileRef>
+   </Group>
+   <Group
+      location = "container:"
+      name = "CSS">
+      <FileRef
+         location = "group:public/css/2cols.css">
+      </FileRef>
+      <FileRef
+         location = "group:public/css/styles.css">
+      </FileRef>
+      <FileRef
+         location = "group:public/css/component.css">
+      </FileRef>
+      <FileRef
+         location = "group:public/css/default.css">
+      </FileRef>
+      <FileRef
+         location = "group:public/css/8cols.css">
+      </FileRef>
+      <FileRef
+         location = "group:public/css/col.css">
+      </FileRef>
+      <FileRef
+         location = "group:public/css/480.css">
+      </FileRef>
+      <FileRef
+         location = "group:public/css/768.css">
+      </FileRef>
+      <FileRef
+         location = "group:public/css/1024.css">
+      </FileRef>
+      <FileRef
+         location = "group:public/css/html5reset.css">
+      </FileRef>
+      <FileRef
+         location = "group:public/css/responsivegridsystem.css">
+      </FileRef>
+   </Group>
+   <Group
+      location = "container:"
+      name = "Views">
+      <FileRef
+         location = "group:views/layout.haml">
+      </FileRef>
+      <FileRef
+         location = "group:views/index.haml">
+      </FileRef>
+      <FileRef
+         location = "group:views/tiles.haml">
+      </FileRef>
+      <FileRef
+         location = "group:views/admin.haml"
+         assignedFileDataType = "public.html">
+      </FileRef>
+      <FileRef
+         location = "group:views/contact.haml">
+      </FileRef>
+      <FileRef
+         location = "group:views/results.haml">
+      </FileRef>
+   </Group>
    <FileRef
       location = "group:app.rb">
    </FileRef>
@@ -12,72 +94,5 @@
    </FileRef>
    <FileRef
       location = "group:Procfile">
-   </FileRef>
-   <FileRef
-      location = "group:public/css/styles.css">
-   </FileRef>
-   <FileRef
-      location = "group:public/css/component.css">
-   </FileRef>
-   <FileRef
-      location = "group:public/css/default.css">
-   </FileRef>
-   <FileRef
-      location = "group:public/css/8cols.css">
-   </FileRef>
-   <FileRef
-      location = "group:public/css/col.css">
-   </FileRef>
-   <FileRef
-      location = "group:public/css/480.css">
-   </FileRef>
-   <FileRef
-      location = "group:public/css/768.css">
-   </FileRef>
-   <FileRef
-      location = "group:public/css/1024.css">
-   </FileRef>
-   <FileRef
-      location = "group:public/css/html5reset.css">
-   </FileRef>
-   <FileRef
-      location = "group:public/css/responsivegridsystem.css">
-   </FileRef>
-   <FileRef
-      location = "group:views/admin.haml"
-      assignedFileDataType = "public.html">
-   </FileRef>
-   <FileRef
-      location = "group:views/index.haml">
-   </FileRef>
-   <FileRef
-      location = "group:views/tiles.haml">
-   </FileRef>
-   <FileRef
-      location = "group:views/contact.haml">
-   </FileRef>
-   <FileRef
-      location = "group:views/layout.haml">
-   </FileRef>
-   <FileRef
-      location = "group:views/results.haml">
-   </FileRef>
-   <FileRef
-      location = "group:public/js/responsivegridsystem.js">
-   </FileRef>
-   <FileRef
-      location = "group:public/js/selectivizr-min.js">
-   </FileRef>
-   <FileRef
-      location = "group:public/js/script.js">
-   </FileRef>
-   <FileRef
-      location = "group:public/js/chartkick.js">
-   </FileRef>
-   <FileRef
-      location = "group:public/js/classie.js">
-   </FileRef>
-   <FileRef
-      location = "group:public/js/modernizr.custom.js">
    </FileRef>
 </Workspace>

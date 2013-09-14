@@ -5,11 +5,14 @@
         Achievement Percentage &#40;&#37;&#41;
       %input{:name => "message", :type => "number", :step => "any"}
         %input#showLeft{:type => "submit", :value => "Calculate"}
-      %h3
-        Payout Percentage &#40;&#37;&#41;
-%section
-  %div{:class => "section group"}
-    - @curves.each do |k,v|
-      %div{:class => "col span_1_of_8"}
-        = @curves[k].name.sub(".txt", "")
-        %input#payout_val{:name => "payout_val", :type => "text", :value => @val_pts[k]}
+.section.group
+  .col.span_1_of_2
+    %h4 Curve
+  .col.span_1_of_2
+    %h4 Payout &#40;&#37;&#41;
+- @curves.each do |k,v|
+  .section.group
+    .col.span_1_of_2
+      = @curves[k].name.sub(".txt", "")
+    .col.span_1_of_2
+      = @val_pts[k]

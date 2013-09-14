@@ -8,6 +8,8 @@
     %button Create
     %button Update
     %button Delete
+%form{:action=>"/admin/delete",:method=>"post"   ,:enctype=>"multipart/form-data"}
+  %input{:type=>"submit",:value=>"Delete"}
 %form{:action=>"/admin/upload",:method=>"post"   ,:enctype=>"multipart/form-data"}
   %input{:type=>"file",:name=>"file"}
   %input{:type => "text", :name => "curve_name", :value => "Enter Curve Name"}

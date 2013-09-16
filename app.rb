@@ -44,7 +44,7 @@ end
 
 post '/' do
     @c_name_test = params[:curves]
-    @point = params[:message].to_f
+    @point = params[:message].to_f.round(2)
     @curves = curves
     #hash to store all payout per curve
     @val_pts = Hash.new

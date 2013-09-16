@@ -7,16 +7,17 @@
         Achievement &#40;&#37;&#41;
       %input{:name => "message", :type => "number", :step => "any"}
         %input#showLeft{:type => "submit", :value => "Calculate"}
-      %h4
-        = "Evaluation point: #{@point}"
-.section.group
-  .col.span_1_of_2
-    %h4 Curve
-  .col.span_1_of_2
-    %h4 Payout &#40;&#37;&#41;
-- @curves.each do |k,v|
+#entry.box.effect6
+  %h4{:style => "padding-top: 5%;"}
+    = "Evaluation point: #{@point}"
   .section.group
     .col.span_1_of_2
-      = @curves[k].name.sub(".txt", "")
+      %h4 Curve
     .col.span_1_of_2
-      = @val_pts[k]
+      %h4 Payout &#40;&#37;&#41;
+  - @curves.each do |k,v|
+    .section.group
+      .col.span_1_of_2
+        = @curves[k].name.sub(".txt", "")
+      .col.span_1_of_2
+        = @val_pts[k]

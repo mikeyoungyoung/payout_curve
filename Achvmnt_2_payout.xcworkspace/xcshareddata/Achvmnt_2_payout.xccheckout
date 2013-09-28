@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>3CB285BB-96F2-4880-8316-0786809CCB84</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Achvmnt_2_payout</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>DB136F45-B85C-477E-B002-537CD3EFFE48</key>
+		<string>https://github.com/mikeyoungyoung/payout_curve.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Achvmnt_2_payout.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>DB136F45-B85C-477E-B002-537CD3EFFE48</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/mikeyoungyoung/payout_curve.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>DB136F45-B85C-477E-B002-537CD3EFFE48</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>DB136F45-B85C-477E-B002-537CD3EFFE48</string>
+			<key>IDESourceControlWCCName</key>
+			<string>achvmnt_2_payout</string>
+		</dict>
+	</array>
+</dict>
+</plist>

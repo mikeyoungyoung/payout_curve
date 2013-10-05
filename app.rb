@@ -49,7 +49,8 @@ post '/' do
     #hash to store all payout per curve
     @val_pts = Hash.new
     #check if evaluation point <=0, set to near zero if true
-    @point = @point <= 0 ? 0.0001 : @point
+    #Take the below line out of the post method and move it to the class
+    #@point = @point <= 0 ? 0.0001 : @point
     #fit hash with evaluation result for each curve
     @curves.each_pair do |k,v|
         @val_pts[k] = v.payout(@point).round(2)
@@ -110,8 +111,17 @@ post '/admin/upload' do
         directory = "./public/curves"
         File.open(File.join(directory, filename), 'wb') do |f|
             f.write file.read
+        #repeat curve creation from above down here
+        #Dir.chdir("./public/curves") do
+        #    files = Dir.glob("*.txt")
+        #    files.each do |file|
+        #       filename = file.to_s
+        #        object = Curve.new(filename)
+        #        object.create_curve(filename)
+        #        curves[file] = object
+        #    end
+        #end
         end
-        
         flash 'Upload successful'
     else
         flash 'You have to choose a file'
@@ -130,6 +140,7 @@ delete '/admin/delete' do
         puts filename
         puts File.join(directory, filename)
         #File.delete(File.join(directory, filename), 'wb')
+        #need to delete the object here as well
         flash 'Upload successful'
         else
         flash 'You have to choose a file'

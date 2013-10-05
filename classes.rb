@@ -49,9 +49,16 @@ class Curve
     #This calulates the payout % between two points
     def payout(c)
         if c.is_a? Float #Fixnum
-            
+            #check to see if the number is in the allowed range
+            #What if it is higher than the top point?
+            if c >= @x_arr.last.to_f
+                c = @x_arr.last.to_f - $tol
+            elsif c <= @x_arr.first.to_f
+                c = @x_arr.first.to_f + $tol
+            end
+            #What if it is lower than the bottom point
             #Reset the evaluation point if it breaches the upper limit of the curve
-            c = c >= @x_arr.last.to_f ? @x_arr.last.to_f - $tol : c
+            #c = c >= @x_arr.last.to_f ? @x_arr.last.to_f - $tol : c
             #get low array and low point
             low_arr = @int_curve.select {|x,y| x.to_f < c }
             low_p = low_arr.last

@@ -48,9 +48,6 @@ post '/' do
     @curves = curves
     #hash to store all payout per curve
     @val_pts = Hash.new
-    #check if evaluation point <=0, set to near zero if true
-    #Take the below line out of the post method and move it to the class
-    #@point = @point <= 0 ? 0.0001 : @point
     #fit hash with evaluation result for each curve
     @curves.each_pair do |k,v|
         @val_pts[k] = v.payout(@point).round(2)

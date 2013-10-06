@@ -1,4 +1,7 @@
 /* General Demo Style */
+.Menu {background: #47a3da; color: white; position: fixed; z-index: 1000; padding: 0, margin: 0; width: 10em; height: 1em; margin: 1em;}
+.Menu:hover {background: red;}
+
 @import url(http://fonts.googleapis.com/css?family=Lato:300,400,700);
 
 @font-face {

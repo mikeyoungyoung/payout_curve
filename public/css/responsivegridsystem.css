@@ -1,3 +1,109 @@
+.Menu {background:black; opacity: .8; height: 1.9em;}
+
+/* Clearfix hack by Nicolas Gallagher: http://nicolasgallagher.com/micro-clearfix-hack/ */
+.clearfix:before,
+.clearfix:after {
+	content: " ";
+	display: table;
+}
+
+.clearfix:after {
+	clear: both;
+}
+
+/* Contacts Styling for the lifted edges */
+
+.box p{
+text-align:center;
+position:relative;
+top:80px;
+}
+.box {
+/*width:70%;
+height:200px;*/
+background:#FFF;
+margin:40px auto;
+padding-bottom: 5%;
+}
+/*==================================================
+* Effect 2
+* ===============================================*/
+.effect2
+{
+position: relative;
+}
+
+.effect2:before, .effect2:after
+{
+z-index: -1;
+position: absolute;
+content: "";
+bottom: 15px;
+left: 10px;
+width: 50%;
+top: 80%;
+max-width:300px;
+background: #777;
+-webkit-box-shadow: 0 15px 10px #777;
+-moz-box-shadow: 0 15px 10px #777;
+box-shadow: 0 15px 10px #777;
+-webkit-transform: rotate(-3deg);
+-moz-transform: rotate(-3deg);
+-o-transform: rotate(-3deg);
+-ms-transform: rotate(-3deg);
+transform: rotate(-3deg);
+}
+
+.effect2:after
+{
+-webkit-transform: rotate(3deg);
+-moz-transform: rotate(3deg);
+-o-transform: rotate(3deg);
+-ms-transform: rotate(3deg);
+transform: rotate(3deg);
+right: 10px;
+left: auto;
+}
+
+/*==================================================
+* Effect 6
+* ===============================================*/
+.effect6
+{
+position:relative;
+-webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+-moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+}
+
+.effect6:before, .effect6:after
+{
+content:"";
+position:absolute;
+z-index:-1;
+-webkit-box-shadow:0 0 20px rgba(0,0,0,0.8);
+-moz-box-shadow:0 0 20px rgba(0,0,0,0.8);
+box-shadow:0 0 20px rgba(0,0,0,0.8);
+top:50%;
+bottom:0;
+left:10px;
+right:10px;
+-moz-border-radius:100px / 10px;
+border-radius:100px / 10px;
+}
+
+.effect6:after
+{
+right:10px;
+left:auto;
+-webkit-transform:skew(8deg) rotate(3deg);
+-moz-transform:skew(8deg) rotate(3deg);
+-ms-transform:skew(8deg) rotate(3deg);
+-o-transform:skew(8deg) rotate(3deg);
+transform:skew(8deg) rotate(3deg);
+}
+
+
 /* RESPONSIVE GRID SYSTEM =============================================================================  */
 
 /* BASIC PAGE SETUP ============================================================================= */
@@ -5,30 +111,30 @@
 body { 
 margin : 0 auto;
 padding : 0;
-/* font : 100%/1.4 'lucida sans unicode', 'lucida grande', 'Trebuchet MS', verdana, arial, helvetica, helve, sans-serif;*/
+font : 100%/1.4 'lucida sans unicode', 'lucida grande', 'Trebuchet MS', verdana, arial, helvetica, helve, sans-serif;
 /*color : #000; */
 text-align: center;
-/*background: #f2f8fc url(/images/bodyback.png) left top;*/
+background-image:url(../images/brickwall.png); background-repeat:repeat;
 }
 
 button, 
 input, 
 select,
 textarea { 
-/*font-family : MuseoSlab100, lucida sans unicode, 'lucida grande', 'Trebuchet MS', verdana, arial, helvetica, helve, sans-serif; */
+font-family : MuseoSlab100, lucida sans unicode, 'lucida grande', 'Trebuchet MS', verdana, arial, helvetica, helve, sans-serif;
 color : #333; }
 
 /*  HEADINGS  ============================================================================= */
 
 h1, h2, h3, h4, h5, h6 {
-/*font-family:  MuseoSlab300, 'lucida sans unicode', 'lucida grande', 'Trebuchet MS', verdana, arial, helvetica, helve, sans-serif;*/
+font-family:  MuseoSlab300, 'lucida sans unicode', 'lucida grande', 'Trebuchet MS', verdana, arial, helvetica, helve, sans-serif;
 font-weight : normal;
 margin-top: 0px;
 letter-spacing: -1px;
 }
 
 h1 { 
-/*font-family:  LeagueGothicRegular, 'lucida sans unicode', 'lucida grande', 'Trebuchet MS', verdana, arial, helvetica, helve, sans-serif;*/
+font-family:  LeagueGothicRegular, 'lucida sans unicode', 'lucida grande', 'Trebuchet MS', verdana, arial, helvetica, helve, sans-serif;
 /*color: #000;*/
 margin-bottom : 0.2em;
 font-size : 6em; /* 96 / 16 */
@@ -164,14 +270,14 @@ bottom : -.25em; }
 
 /* LINKS =============================================================================  */
 
-/*a {
-color : #cc1122;
+a {
+color : white;
 -webkit-transition: all 0.3s ease;
 -moz-transition: all 0.3s ease;
 -o-transition: all 0.3s ease;
 transition: all 0.3s ease;
 text-decoration: none;
-}*/
+}
 
 /*a:visited {
 color : #ee3344; }*/
@@ -180,11 +286,11 @@ a:focus {
 outline : thin dotted; 
 color : rgb(0,0,0); }
 
-/*a:hover,
+a:hover,
 a:active { 
 outline : 0;
-color : #dd2233;
-}*/
+color : #898989;
+}
 
 
 footer a { 

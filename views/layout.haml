@@ -9,35 +9,32 @@
         %meta{:content => "compensation, payout, teired rates, commission", :name => "keywords"}/
         %meta{:content => "Mike Young", :name => "author"}/
         %link{:href => "../favicon.ico", :rel => "shortcut icon"}
-        %link{:href => "css/default.css", :rel => "stylesheet", :type => "text/css"}/
-        %link{:href => "css/component.css", :rel => "stylesheet", :type => "text/css"}/
-        %link{:href => "css/styles.css", :rel => "stylesheet", :type => "text/css"}/
         %link{:href => "css/html5reset.css", :rel => "stylesheet", :type => "text/css"}/
         %link{:href => "css/8cols.css", :rel => "stylesheet", :type => "text/css"}/
         %link{:href => "css/2cols.css", :rel => "stylesheet", :type => "text/css"}/
         %link{:href => "css/col.css", :rel => "stylesheet", :type => "text/css"}/
         %link{:href => "css/responsivegridsystem.css", :rel => "stylesheet", :type => "text/css"}/
         %script{:src => "js/modernizr.custom.js"}
-        %script{:src => "js/chartkick.js"}
-        %script{:src => "js/script.js"}
 
-  %body.cbp-spmenu-push
-    %nav#cbp-spmenu-s1.cbp-spmenu.cbp-spmenu-vertical.cbp-spmenu-left
-      %h3 Menu
-      %a{:href => "/"} Payout Calculator
-      %a{:href => "/tiles"} Curves
-      %a{:href => "/contact"} Contacts
-      %a{:href => "#"} Deal Dashboard
-      %a{:href => "#"} Payment Dashboard
-      %a{:href => "/admin"} Administration
-    .container
-      %header.clearfix
-      .main
-        %section
-          / Class "cbp-spmenu-open" gets applied to menu
-          %button#showLeft Menu
-        
-        #maincontent
+  %body
+  .section.group{style: "background:black"}
+    .col.span_1_of_4
+      %a{href: "/", style: "display:block"}
+        .Menu Calculator
+    .col.span_1_of_4
+      %a{href: "/tiles", style: "display:block"}
+        .Menu Curves
+    .col.span_1_of_4
+      %a{href: "/contact", style: "display:block"}
+        .Menu Contacts
+    .col.span_1_of_4
+      %a{href: "/admin", style: "display:block"}
+        .Menu Administration
+
+  .section.group
+    .wrapper
+      .maincontentcontainer
+        .maincontent
           =yield
     / Classie - class helper functions by @desandro https://github.com/desandro/classie
     %script{:src => "js/classie.js"}
@@ -52,21 +49,6 @@
         document.getElementById("display_curve").value = value;
       }
 
-      var menuLeft = document.getElementById( 'cbp-spmenu-s1' ),
-      	showLeft = document.getElementById( 'showLeft' ),
-      	body = document.body;
-
-      showLeft.onclick = function() {
-      	classie.toggle( this, 'active' );
-      	classie.toggle( menuLeft, 'cbp-spmenu-open' );
-      	disableOther( 'showLeft' );
-      };
-
-      function disableOther( button ) {
-      	if( button !== 'showLeft' ) {
-      		classie.toggle( showLeft, 'disabled' );
-      	}
-      }
     :javascript
         var _gaq = _gaq || [];
         _gaq.push(['_setAccount', 'UA-32630168-1']);

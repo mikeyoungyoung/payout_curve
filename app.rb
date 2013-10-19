@@ -1,6 +1,7 @@
 require 'rubygems'
 require 'bundler/setup'
 require 'sinatra'
+require 'padrino-helpers'
 require 'haml'
 require 'json'
 require_relative 'classes'
@@ -16,6 +17,7 @@ set :haml, :format => :html5
 
 #Create curve objects
 curves = Hash.new
+curve_name = Hash.new
 #for each file in curves director
 Dir.chdir("./public/curves") do
     files = Dir.glob("*.txt")
@@ -24,6 +26,7 @@ Dir.chdir("./public/curves") do
         object = Curve.new(filename)
         object.create_curve(filename)
         curves[file] = object
+        curve_name[file] = file
     end
 end
 
@@ -33,6 +36,7 @@ before do
     @flash = session.delete(:flash)
 end
 
+register Padrino::Helpers
 get '/' do
     @c_name_test = params[:curves]
     @point = params[:message]
@@ -56,18 +60,16 @@ post '/' do
     haml :index
 end
 
-get '/results' do
-    params[:this] = profit.payout(10)
-    haml :results
-end
-
-get '/contact' do
+get '/curves' do
     @curves = curves
-    haml :contact
+    @curves.each {|k,v| puts v }
+    @curve_name = curve_name
+    @this = @curves[1]
+    
+    haml :curves
 end
 
 get '/tiles' do
-
     @curves = curves
     @sym = @curves.keys[0]
 
@@ -79,8 +81,16 @@ post '/tiles' do
     @sym = params[:display_curve]
     #in case no value is selected choose default
     @sym = @curves.keys[0] if params[:display_curve].empty?
+    puts "^^^^^^^^^^^^"
+    puts @sym
+    puts "%%%%%%%%%%%%"
     
     haml :tiles
+end
+
+get '/contact' do
+    
+    haml :contact
 end
 
 get '/admin' do
@@ -145,6 +155,5 @@ delete '/admin/delete' do
     
     redirect '/admin'
 end
-
 
 __END__

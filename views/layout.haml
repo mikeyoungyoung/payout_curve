@@ -5,7 +5,7 @@
     %meta{:content => "IE=edge,chrome=1", "http-equiv" => "X-UA-Compatible"}
       %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}
         %title CloudComp
-        %meta{:content => "Blueprint: Payout Curve Calculations", :name => "description"}/
+        %meta{:content => "Payout Curve Calculations", :name => "CloudComp"}/
         %meta{:content => "compensation, payout, teired rates, commission", :name => "keywords"}/
         %meta{:content => "Mike Young", :name => "author"}/
         %link{:href => "../favicon.ico", :rel => "shortcut icon"}
@@ -15,6 +15,7 @@
         %link{:href => "css/col.css", :rel => "stylesheet", :type => "text/css"}/
         %link{:href => "css/responsivegridsystem.css", :rel => "stylesheet", :type => "text/css"}/
         %script{:src => "js/modernizr.custom.js"}
+    %script{:src => "js/jquery.js"}
 
   %body
   .section.group{style: "background:black"}
@@ -37,19 +38,16 @@
         .maincontent
           =yield
     / Classie - class helper functions by @desandro https://github.com/desandro/classie
-    %script{:src => "js/classie.js"}
-    :javascript
-          // Combobox selection script to populate table
-      function getComboA(sel) {
+    /%script{:src => "js/classie.js"}
+  :javascript
+    // Combobox selection script to populate table
+    function getComboA(sel) {
         var value = sel.options[sel.selectedIndex].value;
         console.log(value);
-        //var curves = new Array();
-        //console.log(curves);
-        //console.log(curves[0][1]);
         document.getElementById("display_curve").value = value;
       }
 
-    :javascript
+  :javascript
         var _gaq = _gaq || [];
         _gaq.push(['_setAccount', 'UA-32630168-1']);
         _gaq.push(['_trackPageview']);

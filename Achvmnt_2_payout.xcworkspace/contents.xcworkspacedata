@@ -5,6 +5,9 @@
       location = "container:"
       name = "JavaScript">
       <FileRef
+         location = "group:public/js/jquery.js">
+      </FileRef>
+      <FileRef
          location = "group:public/js/responsivegridsystem.js">
       </FileRef>
       <FileRef
@@ -71,6 +74,9 @@
       </FileRef>
       <FileRef
          location = "group:views/tiles.haml">
+      </FileRef>
+      <FileRef
+         location = "group:views/curves.haml">
       </FileRef>
       <FileRef
          location = "group:views/admin.haml"

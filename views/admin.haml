@@ -1,10 +1,7 @@
 %section
   %div{:class => "section group", :name => "curve_maint"}
     %form{:action => "/admin", :method => "post", :name => "curve_form"}
-      %select{:name => "curve_list", :onchange => " ", :form => "curve_form"}
-        - @curves.each do |k,v|
-          %option{:value => k}
-            = @curves[k].name
+      = select_tag :curves, :options => @curves, :selected => ''
     %button Create
     %button Update
     %button Delete

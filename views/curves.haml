@@ -2,13 +2,13 @@
   %h2
     Curves
   = select_tag :curves, :options => @curve_name, :selected => @curve_name.first, :id => "curves", :onchange => "getCurve(this)"
+  = hidden_field_tag :display_curve, :value => "", :id => "display_curve"
 %h2{id: "bucket"} This is text
 :javascript
   function getCurve(sel) {
     var value = sel.options[sel.selectedIndex].value;
     var name = value.substring(0,value.length - 4);
     console.log(value);
-    //alert("This is an alert!")
-    //document.getElementById("curves").value = value;
     document.getElementById("bucket").innerHTML = name;
+    document.getElementById("display_curve").value = value;
   }

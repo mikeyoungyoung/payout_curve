@@ -85,9 +85,6 @@
       <FileRef
          location = "group:views/contact.haml">
       </FileRef>
-      <FileRef
-         location = "group:views/results.haml">
-      </FileRef>
    </Group>
    <FileRef
       location = "group:app.rb">
